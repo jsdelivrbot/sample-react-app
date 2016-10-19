@@ -3,6 +3,9 @@
 Bootstrapped the project with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ### Installed plugins 
-* Redux 
-* Redux Thunk
 * React Router
+* React Router Redux
+* Redux 
+* React Redux
+* Redux Thunk
+

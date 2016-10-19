@@ -1,9 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import { render } from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+import store, { history } from './store/createStore';
+import './css/index.css';
+import MainContainer from './containers/Main';
+import Home from './components/Home';
+
+const router = (
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={MainContainer}>
+        <IndexRoute component={Home}></IndexRoute>
+      </Route>
+    </Router>
+  </Provider>
+)
+
+render(router, document.getElementById('root'));
