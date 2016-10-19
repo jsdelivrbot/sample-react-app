@@ -1,4 +1,5 @@
-import { createStore, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 
@@ -6,7 +7,7 @@ import rootReducer from '../reducers/index';
 
 const store = createStore(
   rootReducer,
-  {} //no default state
+  applyMiddleware(thunk)
 );
 
 export const history = syncHistoryWithStore(
