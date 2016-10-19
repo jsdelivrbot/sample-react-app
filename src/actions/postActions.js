@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { FETCH_POSTS } from '../constants/actionTypes'
+import { FETCH_POSTS, FETCH_POSTS_ERROR } from '../constants/actionTypes'
 
 export function fetchPosts(){
   return function (dispatch){
@@ -8,8 +8,9 @@ export function fetchPosts(){
       .then((response) => dispatch({
         type: FETCH_POSTS,
         payload: response.data
-      }).error((response) => {
-        //handle error possibly with an error action
+      })).catch((error) => dispatch({
+        type: FETCH_POSTS_ERROR,
+        payload: error
       }))
   }
 }
