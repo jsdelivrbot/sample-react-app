@@ -1,10 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 
 import store, { history } from './store/createStore';
-import './css/index.css';
 import MainContainer from './containers/Main';
 import Home from './components/Home';
 

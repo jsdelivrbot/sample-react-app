@@ -9,4 +9,5 @@ Bootstrapped the project with [Create React App](https://github.com/facebookincu
 * React Redux
 * Redux Thunk
 * Axios
+* Semantic UI
 
